@@ -272,7 +272,7 @@ const ProjectsSection = () => {
                         Explore our flagship content, interactive simulations, and deep dives into the world of mathematics and computing.
                     </p>
                     <a
-                        href="https://ttc-projects.vercel.app/"
+                        href="https://ttcprojects.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-white/20 text-white font-bold tracking-widest uppercase rounded-full hover:border-yellow-500 transition-all duration-300 overflow-hidden"
