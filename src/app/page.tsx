@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { TrendingUp, Gamepad2, Cpu, ChevronDown, Linkedin, Instagram, Mail } from 'lucide-react';
+import Navbar from '@/components/Navbar';
 
 /**
  * THE TURING CIRCLE - WEBSITE
@@ -97,29 +98,8 @@ const HighlightText = ({ text, keywords, isDark }: { text: string; keywords?: st
     );
 };
 
-// 3. Navigation
-const Navbar = () => (
-    <nav className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference text-white">
-        <div className="flex items-center gap-2">
-            {/* Logo Image with Blend Mode to remove white background */}
-            <div className="w-10 h-10 relative overflow-hidden rounded-full">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="/ttc-logo.png"
-                    alt="The Turing Circle"
-                    className="w-full h-full object-cover mix-blend-screen scale-110"
-                />
-            </div>
-            <span className="font-bold tracking-tight text-lg hidden sm:block">The Turing Circle</span>
-        </div>
-        <div className="flex gap-6 text-sm font-mono tracking-widest uppercase">
-            <a href="#about" className="hover:text-yellow-400 transition-colors">About</a>
-            <a href="#domains" className="hover:text-yellow-400 transition-colors">Domains</a>
-            <a href="#team" className="hover:text-yellow-400 transition-colors">Team</a>
-            <a href="https://ttcprojects.vercel.app/" className="px-3 py-1 border border-yellow-500 text-yellow-500 rounded-full hover:bg-yellow-500 hover:text-black transition-all">Our Projects</a>
-        </div>
-    </nav>
-);
+// 3. Navigation (Replaced by @/components/Navbar)
+// const Navbar = ... (removed)
 
 // 4. Hero Section
 const Hero = () => {
@@ -237,14 +217,48 @@ const DomainSection = ({ data }: { data: typeof DOMAINS[0] }) => {
                     )}
 
                     {data.id === 'quant' && (
-                        <div className="relative w-full h-full p-10">
-                            <svg viewBox="0 0 200 100" className="w-full h-full stroke-black fill-none stroke-2">
+                        <div className="relative w-full h-full p-8 bg-white/50 backdrop-blur-sm">
+                            {/* Grid Lines */}
+                            <div className="absolute inset-0 grid grid-cols-4 grid-rows-4">
+                                {[...Array(16)].map((_, i) => (
+                                    <div key={i} className="border-[0.5px] border-black/5"></div>
+                                ))}
+                            </div>
+                            <svg viewBox="0 0 200 100" className="w-full h-full stroke-black fill-none stroke-2 relative z-10">
+                                {/* Area Fill */}
+                                <defs>
+                                    <linearGradient id="quantGradient" x1="0" x2="0" y1="0" y2="1">
+                                        <stop offset="0%" stopColor="black" stopOpacity="0.2" />
+                                        <stop offset="100%" stopColor="black" stopOpacity="0" />
+                                    </linearGradient>
+                                </defs>
                                 <motion.path
-                                    d="M0,100 Q50,0 100,50 T200,0"
+                                    d="M0,80 L20,75 L40,82 L60,50 L80,45 L100,55 L120,30 L140,35 L160,15 L180,20 L200,5 V100 H0 Z"
+                                    fill="url(#quantGradient)"
+                                    stroke="none"
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 1.5 }}
+                                />
+                                {/* Main Trend Line */}
+                                <motion.path
+                                    d="M0,80 L20,75 L40,82 L60,50 L80,45 L100,55 L120,30 L140,35 L160,15 L180,20 L200,5"
                                     initial={{ pathLength: 0 }}
                                     whileInView={{ pathLength: 1 }}
-                                    transition={{ duration: 2, ease: "easeInOut" }}
+                                    transition={{ duration: 2, ease: "easeOut" }}
                                 />
+                                {/* Candlestick hints */}
+                                {[20, 60, 100, 140, 180].map((x, i) => (
+                                    <motion.rect
+                                        key={i}
+                                        x={x - 2} y={[70, 45, 50, 30, 15][i]}
+                                        width="4" height="10"
+                                        fill="black"
+                                        initial={{ scaleY: 0 }}
+                                        whileInView={{ scaleY: 1 }}
+                                        transition={{ delay: 1 + i * 0.1, duration: 0.5 }}
+                                    />
+                                ))}
                             </svg>
                         </div>
                     )}
@@ -369,9 +383,11 @@ export default function App() {
                             <p className="text-neutral-400">The minds behind the circle.</p>
                         </motion.div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="flex overflow-x-auto gap-6 pb-8 snap-x scrollbar-hide">
                             {TEAM_MEMBERS.map((member, index) => (
-                                <TeamCard key={index} member={member} index={index} />
+                                <div key={index} className="min-w-[280px] md:min-w-[320px] snap-center">
+                                    <TeamCard member={member} index={index} />
+                                </div>
                             ))}
                         </div>
                     </div>
