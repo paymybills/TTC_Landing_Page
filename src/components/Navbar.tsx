@@ -20,6 +20,7 @@ export default function Navbar() {
         { name: "Deep Learning", href: "#deep-learning" },
         { name: "Quant", href: "#quant" },
         { name: "Game Theory", href: "#game-theory" },
+        { name: "Projects", href: "https://ttcprojects.vercel.app/" },
         { name: "Team", href: "#team" },
         { name: "Contact", href: "#contact" },
     ];
