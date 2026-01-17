@@ -111,6 +111,7 @@ const Navbar = () => (
             <a href="#about" className="hover:text-yellow-400 transition-colors">About</a>
             <a href="#domains" className="hover:text-yellow-400 transition-colors">Domains</a>
             <a href="#team" className="hover:text-yellow-400 transition-colors">Team</a>
+            <a href="https://ttcprojects.vercel.app/" className="px-3 py-1 border border-yellow-500 text-yellow-500 rounded-full hover:bg-yellow-500 hover:text-black transition-all">Our Projects</a>
         </div>
     </nav>
 );
