@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { TrendingUp, Gamepad2, Cpu, ChevronDown, Linkedin, Instagram, Mail } from 'lucide-react';
+import { TrendingUp, Gamepad2, Cpu, ChevronDown, Linkedin, Instagram, Mail, Github } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 /**
@@ -408,6 +408,9 @@ export default function App() {
                         </a>
                         <a href="https://www.instagram.com/the_turing_circle/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
                             <Instagram size={24} />
+                        </a>
+                        <a href="https://github.com/Circle-Turing" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                            <Github size={24} />
                         </a>
                         <a href="mailto:theturingcircle.mit@manipal.edu" className="text-neutral-400 hover:text-white transition-colors">
                             <Mail size={24} />
