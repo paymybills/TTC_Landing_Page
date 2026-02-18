@@ -18,8 +18,9 @@ const teamMembers: TeamMember[] = [
     { name: "Aniruddha Roy", role: "Head of ML" },
     { name: "Aravinthakshan", role: "Head of ML" },
     { name: "Ananya Sahani", role: "Head of Game Theory" },
-    { name: "Rijul Kaushik", role: "Head of PR and SMGD" },
-    { name: "Pavitra Parth", role: "Head of Human Relations" },
+    { name: "Rijul Kaushik", role: "SMGD" },
+    { name: "Hemesh Kukreja", role: "Head of PR and Outreach" },
+    { name: "Parth Trivedi", role: "Head of Human Relations" },
 ];
 
 export default function TeamSection() {
