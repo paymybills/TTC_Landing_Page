@@ -19,8 +19,9 @@ const TEAM_MEMBERS = [
     { name: "Aniruddha Roy", role: "Head of ML", domain: "Deep Learning", img: "https://ui-avatars.com/api/?name=Aniruddha+Roy&background=050505&color=D4AF37" },
     { name: "Aravinthakshan", role: "Head of ML", domain: "Deep Learning", img: "https://ui-avatars.com/api/?name=Aravinthakshan&background=050505&color=D4AF37" },
     { name: "Ananya Sahani", role: "Head of Game Theory", domain: "Game Theory", img: "https://ui-avatars.com/api/?name=Ananya+Sahani&background=050505&color=D4AF37" },
-    { name: "Rijul Kaushik", role: "Head of PR & SMGD", domain: "Operations", img: "https://ui-avatars.com/api/?name=Rijul+Kaushik&background=050505&color=D4AF37" },
-    { name: "Pavitra Parth", role: "Head of HR", domain: "Human Relations", img: "https://ui-avatars.com/api/?name=Pavitra+Parth&background=050505&color=D4AF37" },
+    { name: "Rijul Kaushik", role: "SMGD", domain: "Operations", img: "https://ui-avatars.com/api/?name=Rijul+Kaushik&background=050505&color=D4AF37" },
+    { name: "Hemesh Kukreja", role: "Head of PR and Outreach", domain: "Public Relations", img: "https://ui-avatars.com/api/?name=Hemesh+Kukreja&background=050505&color=D4AF37" },
+    { name: "Parth Trivedi", role: "Head of HR", domain: "Human Relations", img: "https://ui-avatars.com/api/?name=Parth+Trivedi&background=050505&color=D4AF37" },
 ];
 
 const DOMAINS = [
